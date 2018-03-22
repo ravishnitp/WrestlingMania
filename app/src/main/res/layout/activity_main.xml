@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:src="@drawable/wrestling3"
+         android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- For player A -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="Player A"
+                android:textColor="@android:color/white"
+                android:fontFamily="sans-serif-medium"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+
+                />
+
+            <TextView
+                android:id="@+id/score_player_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:fontFamily="sans-serif-light"
+                android:textSize="56sp"
+                android:layout_gravity="center_horizontal"/>
+
+            <Button
+                android:id="@+id/btnA3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addThreePointsToA"
+                android:text="+3 Points"
+                android:layout_marginLeft="24sp"
+                android:layout_marginRight="24sp"
+                android:layout_marginBottom="8sp"/>
+
+            <Button
+                android:id="@+id/btnA2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addTwoPointsToA"
+                android:text="+2 Points"
+                android:layout_marginLeft="24sp"
+                android:layout_marginRight="24sp"
+                android:layout_marginBottom="8sp"/>
+
+            <Button
+                android:id="@+id/btnA1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addOnePointsToA"
+                android:text="+1 Points"
+                android:layout_marginLeft="24sp"
+                android:layout_marginRight="24sp"
+                android:layout_marginBottom="8sp"/>
+
+            <Button
+                android:id="@+id/btnAP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addPenaltyToA"
+                android:text="Penalty"
+                android:layout_marginLeft="24sp"
+                android:layout_marginRight="24sp" />
+
+        </LinearLayout>
+
+        <!-- Textview to draw a line -->
+        <TextView
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_red_dark" />
+
+
+        <!-- For player B -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="@android:color/white"
+                android:layout_marginTop="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Player B"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/score_player_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:fontFamily="sans-serif-light"
+                android:textSize="56sp"
+                android:layout_gravity="center_horizontal"/>
+
+            <Button
+                android:id="@+id/btnB3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addThreePointsToB"
+                android:text="+3 Points"
+                android:layout_marginLeft="24sp"
+                android:layout_marginRight="24sp"
+                android:layout_marginBottom="8sp"/>
+
+            <Button
+                android:id="@+id/btnB2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addTwoPointsToB"
+                android:text="+2 Points"
+                android:layout_marginLeft="24sp"
+                android:layout_marginRight="24sp"
+                android:layout_marginBottom="8sp"/>
+
+            <Button
+                android:id="@+id/btnB1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addOnePointsToB"
+                android:text="+1 Points"
+                android:layout_marginLeft="24sp"
+                android:layout_marginRight="24sp"
+                android:layout_marginBottom="8sp"/>
+
+            <Button
+                android:id="@+id/btnBP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addPenaltyToB"
+                android:text="Penalty"
+                android:layout_marginLeft="24sp"
+                android:layout_marginRight="24sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Button and textview to end match and display result -->
+    <Button
+        android:id="@+id/end_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/result"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10sp"
+        android:onClick="endMatch"
+        android:text="End Match" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10sp"
+        android:text="Result is : "
+        android:visibility="visible"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:layout_above="@+id/reset" />
+
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20sp"
+        android:onClick="resetScore"
+        android:text="RESET" />
+
+
+</RelativeLayout>
